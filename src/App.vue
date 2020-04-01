@@ -1,5 +1,7 @@
 <template>
-  <div id="app"></div>
+  <div id="app">
+    <uc-icon icon="accessory"></uc-icon>
+  </div>
 </template>
 
 <script>
