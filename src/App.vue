@@ -18,13 +18,26 @@
 
     <br />
 
+    <uc-button type="primary" :loading="true">loading</uc-button>
+
+    <br />
+
+    <uc-button type="success" @click="handleClick">事件</uc-button>
+
+    <br />
+
     <uc-icon icon="accessory"></uc-icon>
   </div>
 </template>
 
 <script>
 export default {
-  name: "App"
+  name: "App",
+  methods: {
+    handleClick(e) {
+      console.log("点击按钮", e);
+    }
+  }
 };
 </script>
 

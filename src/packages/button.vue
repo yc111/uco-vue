@@ -1,6 +1,12 @@
 <template>
-  <button class="uc-button" :class="btnClass">
-    <uc-icon :icon="icon" v-if="icon" class="icon"></uc-icon>
+  <button
+    class="uc-button"
+    :class="btnClass"
+    :disabled="loading"
+    @click="$emit('click', $event)"
+  >
+    <uc-icon :icon="icon" v-if="icon && !loading" class="icon"></uc-icon>
+    <uc-icon icon="loading" v-if="loading"></uc-icon>
     <span v-if="this.$slots.default">
       <slot></slot>
     </span>
@@ -39,6 +45,10 @@ export default {
         }
         return true;
       }
+    },
+    loading: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
@@ -49,6 +59,9 @@ export default {
       }
       if (this.iconPosition) {
         classes.push(`uc-button-${this.iconPosition}`);
+      }
+      if (this.loading) {
+        classes.push(`uc-button-loading`);
       }
       return classes;
     }
@@ -119,6 +132,22 @@ $active-color: #3a8ee6;
       color: #fff;
     }
   }
+  @each $type,
+    $color
+      in (
+        primary: $primary-active,
+        success: $success-active,
+        warning: $warning-active,
+        danger: $danger-active,
+        info: $info-active
+      )
+  {
+    &-#{$type}:active {
+      background: #{$color};
+      border-color: #{$color};
+      color: #fff;
+    }
+  }
   &-left {
     svg {
       order: 1;
@@ -137,6 +166,16 @@ $active-color: #3a8ee6;
       margin-left: 0;
       margin-right: 4px;
     }
+  }
+  &[disabled],
+  &[disabled]:hover,
+  &[disabled]:focus {
+    border-color: transparent;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+  &.uc-button-loading svg {
+    animation: rotating 2s linear infinite;
   }
 }
 </style>
