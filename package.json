@@ -1,0 +1,35 @@
+{
+  "name": "uco-ui-doc",
+  "version": "1.0.0",
+  "description": "A suit of ui components for Vue.js",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:yc111/uco-vue.git"
+  },
+  "homepage": "https://yc111.github.io/uco-vue",
+  "author": "champyin",
+  "keywords": [
+    "uco-ui",
+    "vue",
+    "components"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yc111/uco-vue.git/issues"
+  },
+  "devDependencies": {
+    "vuepress": "^1.4.0"
+  },
+  "dependencies": {
+    "core-js": "^2.6.11",
+    "element-ui": "^2.13.0",
+    "highlight.js": "^9.18.1",
+    "node-sass": "^4.13.1",
+    "sass-loader": "^8.0.2"
+  }
+}
