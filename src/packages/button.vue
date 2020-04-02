@@ -25,7 +25,7 @@ export default {
           type &&
           !["primary", "success", "warning", "danger", "info"].includes(type)
         ) {
-          console.error(
+          console.error( //eslint-disable-line no-console
             "type 必须为: " +
               ["primary", "success", "warning", "danger", "info"].join(",")
           );
@@ -41,6 +41,7 @@ export default {
       default: "left",
       validator(type) {
         if (type && !["left", "right"].includes(type)) {
+          //eslint-disable-next-line no-console
           console.error("icon-position 必须为: " + ["left", "right"].join("|"));
         }
         return true;
@@ -71,8 +72,9 @@ export default {
 
 <style lang="scss">
 @import "../styles/var.scss";
-$height: 42px;
-$font-size: 16px;
+$height: 40px;
+$font-size: 14px;
+$font-weight: 500;
 $border-color: #dcdfe6;
 $background: #ecf5ff;
 $active-color: #3a8ee6;
@@ -83,6 +85,7 @@ $active-color: #3a8ee6;
   height: $height;
   line-height: 1;
   font-size: $font-size;
+  font-weight: $font-weight;
   cursor: pointer;
   padding: 12px 20px;
   display: inline-flex;
