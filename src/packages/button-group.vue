@@ -11,6 +11,7 @@ export default {
   mounted() {
     let children = this.$el.children;
     for (let i = 0; i < children.length; i++) {
+      // eslint-disable-next-line no-console
       console.assert(children[i].tagName === "BUTTON", "子元素必须是button");
     }
   }

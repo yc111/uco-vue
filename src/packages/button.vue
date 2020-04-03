@@ -25,7 +25,8 @@ export default {
           type &&
           !["primary", "success", "warning", "danger", "info"].includes(type)
         ) {
-          console.error( //eslint-disable-line no-console
+          //eslint-disable-next-line no-console
+          console.error(
             "type 必须为: " +
               ["primary", "success", "warning", "danger", "info"].join(",")
           );
@@ -177,7 +178,8 @@ $active-color: #3a8ee6;
     pointer-events: none;
     cursor: not-allowed;
   }
-  &.uc-button-loading svg {
+  &.uc-button-loading svg,
+  &.uc-button-loading i {
     animation: rotating 2s linear infinite;
   }
 }

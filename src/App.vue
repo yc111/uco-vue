@@ -46,6 +46,7 @@ export default {
   name: "App",
   methods: {
     handleClick(e) {
+      // eslint-disable-next-line no-console
       console.log("点击按钮", e);
     }
   }
