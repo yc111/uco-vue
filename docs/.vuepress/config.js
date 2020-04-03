@@ -1,7 +1,7 @@
 module.exports = {
+    // base:'/uco-vue/',
     title: 'uco-ui',
     description: 'A suit of ui components for Vue.js',
-    dest: './build',
     port: 8090,
     themeConfig: {
         nav: [
