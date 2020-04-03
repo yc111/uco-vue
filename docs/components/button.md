@@ -1,5 +1,7 @@
 ## Button 按钮
+
 ### 基础按钮
+
 <demo-block>
 ::: slot source
 <button-base></button-base>
@@ -23,6 +25,7 @@
 
 
 ### 图标按钮
+
 <demo-block>
 ::: slot source
 <button-icon></button-icon>
@@ -111,3 +114,18 @@ export default {
 ```
 :::
 </demo-block>
+
+### Button属性
+
+|参数|说明|类型|可选值|默认值|
+|---|---|---|---|---|
+|type|类型|String|primary, success, warning, danger, info|-|
+|icon|图标|String|-|-|
+|icon-position|图标位置|String|left, right|left|
+|loading|是否为加载状态|Boolean|true, false|false|
+
+### Button 事件
+
+|事件名称|说明|回调参数|
+|---|---|---|
+|click|点击Button时触发|(event:Event)|
