@@ -1,11 +1,12 @@
 <template>
-  <svg class="uc-icon" aria-hidden="true">
+  <!-- <svg class="uc-icon" aria-hidden="true">
     <use :xlink:href="`#icon-${icon}`"></use>
-  </svg>
+  </svg> -->
+  <i :class="`iconfont icon-${icon}`"></i>
 </template>
 
 <script>
-import "../styles/icon";
+import "../styles/iconfont.css";
 
 export default {
   name: "uc-icon",
