@@ -8,8 +8,17 @@ const install = Vue => {
   Vue.component(Icon.name, Icon);
 };
 
-if (typeof window.Vue !== "undefined") {
-  install(window.Vue);
+const plugin = { install };
+
+let GlobalVue = null;
+if (typeof window !== "undefined") {
+  GlobalVue = window.Vue;
+}
+if (typeof global !== "undefined") {
+  GlobalVue = global.Vue;
+}
+if (GlobalVue) {
+  GlobalVue.use(plugin);
 }
 
 export default {
